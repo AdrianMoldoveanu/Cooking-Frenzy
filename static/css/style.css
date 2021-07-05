@@ -4,13 +4,10 @@
 
 body {
     background: url("../images/cooking.jpg") no-repeat center center fixed;
-   font-family: "Vollkorn", sans-serif;
-   font-weight: 400;
-   overflow-x: hidden;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-   color: #fafafa;
-   margin: auto;  
-}
+    overflow-x: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: auto;}
+
