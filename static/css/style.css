@@ -11,3 +11,11 @@ body {
     background-size: cover;
     margin: auto;}
 
+@media only screen and (min-width: 1200px) {
+    .page-footer {
+        position:fixed;
+        bottom:0;
+        width: 100%;  
+        }
+      }
+      
