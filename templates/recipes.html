@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+     <h3 class="light-blue-text text-darken-4 center-align">All Recipes</h3>
+
     <ul class="collapsible">
       {% for recipe in recipes %}
         <li>
@@ -9,11 +11,15 @@
             <strong>{{ recipe.recipe_name }}</strong>
           </div>
           <div class="collapsible-body">
-            <h6 class="bold  yellow-text text-darken-4">{{ recipe.category_name }}</h6>
+            <h6 class="bold  yellow-text text-darken-4">
+              <p class="bold light-blue-text text-darken-4">Best for:</p> {{ recipe.category_name }}</h6>
             <h6 class="bold light-blue-text text-darken-4">You need: </h6>
-            <p>{{ recipe.ingredients }}</p>
+            <p>{{ recipe.recipe_ingredients }}</p>
             <h6 class="bold light-blue-text text-darken-4">How to: </h6>
             <p>{{ recipe.recipe_method }}</p>
+            <p><em>by: {{ recipe.created_by }}</em></p>
+            
+
           </div>
         </li>
       {% endfor %}
