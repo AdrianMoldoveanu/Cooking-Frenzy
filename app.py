@@ -18,11 +18,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
+
+
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -48,6 +51,8 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
+
+
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -79,6 +84,8 @@ def login():
     return render_template("login.html")
 
 
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -91,12 +98,16 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -116,6 +127,9 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
+
+
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -132,6 +146,16 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories) 
+
+
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_task(task_id):
+    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("get_recipes"))
+
 
 
 
