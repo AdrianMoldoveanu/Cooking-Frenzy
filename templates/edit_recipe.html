@@ -35,8 +35,8 @@
       <div class="row"> 
         <div class="input-field col s12">
           <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-          <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5"
-          maxlength="1000" class="materialize-textarea validate" required>{{- recipe.recipe_ingredients -}}</textarea>
+          <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="1"
+          maxlength="1000" class="materialize-textarea validate" required>{{ recipe.recipe_ingredients }}</textarea>
           <label for="recipe_ingredients">Ingredients</label>
         </div>
       </div>
@@ -44,8 +44,8 @@
       <div class="row"> 
         <div class="input-field col s12">
           <i class="fas fa-list prefix light-blue-text text-darken-4"></i>
-          <textarea id="recipe_method" name="recipe_method" minlength="15"
-          maxlength="5000" class="materialize-textarea validate" required>{{- recipe.recipe_method -}}</textarea>
+          <textarea id="recipe_method" name="recipe_method" minlength="1"
+          maxlength="5000" class="materialize-textarea validate" required>{{ recipe.recipe_method }}</textarea>
           <label for="recipe_method">Preparation Steps</label>
         </div>
       </div>
