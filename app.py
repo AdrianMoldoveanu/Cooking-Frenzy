@@ -18,14 +18,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
-
-
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -51,8 +48,6 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
-
-
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -84,8 +79,6 @@ def login():
     return render_template("login.html")
 
 
-
-
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -98,16 +91,12 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-
-
 @app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
-
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -128,41 +117,33 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
-
-
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
         submit = {
-           "recipe_name": request.form.get("recipe_name"),
+            "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
             "created_by": session["user"]
         }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$set":submit})
         flash("Recipe Successfully Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories) 
-
-
+    return render_template("edit_recipe.html", recipe=recipe, 
+            categories=categories) 
 
 
 @app.route("/delete_recipe/<recipe_id>")
-def delete_task(task_id):
-    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
-
-
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-
- 
