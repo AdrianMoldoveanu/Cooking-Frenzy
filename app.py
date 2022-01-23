@@ -110,6 +110,7 @@ def logout():
 def add_recipe():
     if request.method == "POST":
         recipe = {
+            "recipe_image": request.form.get("recipe_image"),
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
@@ -128,6 +129,7 @@ def add_recipe():
 def edit_recipe(recipe_id):
     if request.method == "POST":
         submit = {
+            "recipe_image": request.form.get("recipe_image"),
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),

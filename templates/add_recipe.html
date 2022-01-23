@@ -8,6 +8,12 @@
       <!--recipe name-->
       <div class="row">
         <div class="input-field col s12">
+          <i class="fas fa-image prefix"></i>
+          <input id="recipe_image" name="recipe_image" type="url"
+            class="validate" required>
+          <label for="recipe_image">Place your image url here</label>
+        </div>
+        <div class="input-field col s12">
           <i class="fas fa-pencil-alt light-blue-text text-darken-4"></i>
           <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
            type="text" class="validate" required>
