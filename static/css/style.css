@@ -3,7 +3,7 @@
 }
 
 body {
-    background: url("../images/cooking4.jpg") no-repeat center center fixed;
+    background: url("../images/cooking1.png") no-repeat center center fixed;
     overflow-x: hidden;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -34,6 +34,15 @@ flex: 1 0 auto;
 }    
 
 .collapsible-header {
-  background-color: #b2c1a2;
   font-size: 1.25em;  
 }
+
+/* Footer */
+
+.page-footer {
+    text-shadow: 2px 2px 2px rgba(93, 179, 153, 0.5);
+    color: black; 
+}
+
+/* Navbar */
+

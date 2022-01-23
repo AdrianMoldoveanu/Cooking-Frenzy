@@ -15,29 +15,29 @@
 <body>
     <header>
         <!--top navbar-->
-        <nav class="nav-extended purple lighten-2 text-shadow">
+        <nav class="nav-extended green lighten-3 text-shadow">
             <div class="nav-wrapper">
-              <a href="{{ url_for('get_recipes') }}" class="brand-logo">Cooking Frenzy</a>
+              <a href="{{ url_for('get_recipes') }}" class="brand-logo black-text text-shadow">Cooking Frenzy</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+              <ul class="right hide-on-med-and-down black-text">
+                <li><a class="black-text" href="{{ url_for('get_recipes') }}">Home</a></li>
                 {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
+                <li><a class="black-text" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a class="black-text" href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                 {% if session.user|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                    <li><a class="black-text" href="{{ url_for('get_categories') }}">Manage Categories</a></li>
                 {% endif %}
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <li><a class="black-text" href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a class="black-text" href="{{ url_for('login') }}">Log In</a></li>
+                <li><a class="black-text" href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}  
               </ul>
             </div>
           </nav>
         <!--mobile navbar-->
-          <ul class="sidenav" id="mobile-demo">
-            <li class="h4 center-align purple lighten-1">Cooking Frenzy</li> 
+          <ul class="sidenav green lighten-3" id="mobile-demo">
+            <li class="h4 center-align">Cooking Frenzy</li> 
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -59,7 +59,7 @@
           {% if messages %}
               {% for message in messages %}
                   <div class="row flashes">
-                      <h4 class="purple lighten-4 center-align">{{ message }}</h4>
+                      <h4 class="green lighten-4 center-align">{{ message }}</h4>
                   </div>
               {% endfor %}
           {% endif %}
@@ -70,20 +70,20 @@
       {% block content %}
       {% endblock %}
   </main>
-    <footer class="page-footer purple lighten-2">
+    <footer class="page-footer green lighten-3">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <h5>Footer Content</h5>
+            <p>You can use rows and columns here to organize your footer content.</p>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
+            <h5>Links</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              <li><a href="#!">Link 1</a></li>
+              <li><a href="#!">Link 2</a></li>
+              <li><a href="#!">Link 3</a></li>
+              <li><a href="#!">Link 4</a></li>
             </ul>
           </div>
         </div>
@@ -91,7 +91,7 @@
       <div class="footer-copyright">
         <div class="container">
         © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        <a class="grey-text text-lighten-3 right" href="#!">More Links</a>
         </div>
       </div>
     </footer>
