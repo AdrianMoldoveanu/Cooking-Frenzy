@@ -44,5 +44,26 @@ flex: 1 0 auto;
     color: black; 
 }
 
+#socials {
+    padding-top: 15px;
+}
+#socials i {
+    color: #031cffb9;
+}
+#socials i:hover {
+    color: rgb(106, 80, 255);
+}
+#socials li {
+    display: inline;
+    padding-right: 15px;
+}
+
+#links a {
+    color: #031cffb9;
+}
+
+#links a:hover {
+    color: rgb(106, 80, 255);
+}
 /* Navbar */
 
