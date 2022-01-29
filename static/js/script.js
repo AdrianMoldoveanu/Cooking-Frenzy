@@ -32,6 +32,8 @@ $(document).ready(function () {
   }
 });
 
+// Add ingredients //
+
 let ingredient = 1;
 let max_ingredients = 20;
 
@@ -44,11 +46,34 @@ $(".add_ingredient").click(function (e) {
     <input id="recipe_ingredients${ingredient}" name="recipe_ingredients" type="text" data-length="150" 
       minlength="2" maxlength="150" class="validate" required>
     <label for="recipe_ingredients${ingredient}">Ingredient</label>
-    <a type="button" class="left red btn-small text-shadow remove_ingredient"><i class="fas fa-minus"></i> Remove ingredient</a></div>`);
+    <a type="button" class="red btn-small text-shadow black-text remove_ingredient"><i class="fas fa-minus"></i> Remove ingredient</a></div>`);
   }
 });
 
 $("main").on('click', ".remove_ingredient", function () {
   $(this).parent('div').remove();
   ingredient--;
+});
+
+// Add preparation steps //
+
+let preparation_step = 1;
+let max_preparation_steps = 20;
+
+$(".add_preparation_step").click(function (e) {
+  e.preventDefault();
+  if (preparation_step < max_preparation_steps) {
+    preparation_step++;
+    $(".list_of_preparation_steps").append(`
+    <div class="input-field col s12">
+    <input id="recipe_method${preparation_step}" name="recipe_method" type="text" data-length="500" 
+      minlength="5" maxlength="500" class="validate" required>
+    <label for="recipe_method${preparation_step}">Preparation step</label>
+    <a type="button" class="red btn-small text-shadow black-text remove_preparation_step"><i class="fas fa-minus"></i> Remove step</a></div>`);
+  }
+});
+
+$("main").on('click', ".remove_preparation_step", function () {
+  $(this).parent('div').remove();
+  preparation_step--;
 });

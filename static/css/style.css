@@ -67,7 +67,12 @@ flex: 1 0 auto;
 }
 /* Navbar */
 
-.lists li {
+.ingredients_list li {
     display: inline;
+    padding: 5px;
+}
+
+
+.steps_list {
     padding: 5px;
 }

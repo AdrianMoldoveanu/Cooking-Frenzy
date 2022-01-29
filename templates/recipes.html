@@ -44,7 +44,7 @@
               <p>{{ recipe.category_name }}</p>
                 <h6 class="bold light-blue-text text-darken-4">You need: </h6>
                   <div class="ingredients">
-                    <ul class="lists">
+                    <ul class="ingredients_list">
                       {% for ingredient in recipe.recipe_ingredients %}
                       <i class="fas fa-check fa-xs"></i>
                           <li>{{ ingredient|capitalize }}</li>
@@ -52,7 +52,15 @@
                     </ul>
                 </div>
               <h6 class="bold light-blue-text text-darken-4">How to: </h6>
-              <p>{{ recipe.recipe_method }}</p>
+              <div class="preparation_step">
+                <div class="col s12">
+                  <ol class="steps_list">
+                  {% for preparation_step in recipe.recipe_method %}
+                      <li>{{ preparation_step|capitalize }}</li>
+                  {% endfor %}
+                </ol>
+              </div>
+            </div>
               <p><em>Author: {{ recipe.created_by|capitalize }}</em></p>
               {% if session.user|lower == recipe.created_by|lower %}
               <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red accent-4">Delete</a>
