@@ -7,7 +7,7 @@
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
       <div class="row">
       <div class="input-field col s12">
-        <i class="fas fa-image prefix"></i>
+        <i class="fas fa-image light-green-text text-darken-4 text-shadow prefix"></i>
         <input id="recipe_image" name="recipe_image" type="url"
           class="validate" required>
         <label for="recipe_image">Place your image url here</label>
@@ -16,7 +16,7 @@
       <!--recipe name-->
       <div class="row">
         <div class="input-field col s12">
-          <i class="fas fa-pencil-alt light-blue-text text-darken-4"></i>
+          <i class="fas fa-pencil-alt light-green-text text-darken-4 text-shadow"></i>
           <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
            value="{{ recipe.recipe_name }}" type="text" class="validate" required>
           <label for="recipe_name">Recipe Name</label>
@@ -25,7 +25,7 @@
       <!--recipe category-->
       <div class="row">
         <div class="input-field col s12">
-          <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+          <i class="fas fa-folder-open prefix light-green-text text-darken-4 text-shadow"></i>
           <select id="category_name" name="category_name" class="validate" required>
             <option value="" disabled>Choose Category</option>
             {% for category in categories %}
@@ -41,17 +41,31 @@
       </div>
       <!--recipe ingredients-->
       <div class="row"> 
-        <div class="input-field col s12">
-          <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-          <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="1"
-          maxlength="1000" class="materialize-textarea validate" required>{{ recipe.recipe_ingredients }}</textarea>
-          <label for="recipe_ingredients">Ingredients</label>
-        </div>
-      </div>
+        {% for ingredient in recipe.recipe_ingredients %}
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="recipe_ingredients" name="recipe_ingredients" type="text" data-length="150" minlength="2"
+                value="{{ ingredient }}" maxlength="150" class="validate" required>
+              <label for="recipe_ingredients{{ loop.index }}">Ingredient</label>
+              <a type="button" class="btn-small red text-shadow remove_ingredient">
+                <i class="fas fa-minus"></i> Remove ingredient</a>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="row list_of_ingredients">
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <a class="btn-small btn-green-ingredient add_ingredient">
+                <i class="fas fa-plus"></i> 
+                Add ingredient
+              </a>
+            </div>
+          </div>
       <!--recipe preparation steps-->
       <div class="row"> 
         <div class="input-field col s12">
-          <i class="fas fa-list prefix light-blue-text text-darken-4"></i>
+          <i class="fas fa-list prefix light-green-text text-darken-4 text-shadow"></i>
           <textarea id="recipe_method" name="recipe_method" minlength="1"
           maxlength="5000" class="materialize-textarea validate" required>{{ recipe.recipe_method }}</textarea>
           <label for="recipe_method">Preparation Steps</label>

@@ -67,3 +67,7 @@ flex: 1 0 auto;
 }
 /* Navbar */
 
+.lists li {
+    display: inline;
+    padding: 5px;
+}

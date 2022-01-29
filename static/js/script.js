@@ -32,3 +32,23 @@ $(document).ready(function () {
   }
 });
 
+let ingredient = 1;
+let max_ingredients = 20;
+
+$(".add_ingredient").click(function (e) {
+  e.preventDefault();
+  if (ingredient < max_ingredients) {
+    ingredient++;
+    $(".list_of_ingredients").append(`
+    <div class="input-field col s12">
+    <input id="recipe_ingredients${ingredient}" name="recipe_ingredients" type="text" data-length="150" 
+      minlength="2" maxlength="150" class="validate" required>
+    <label for="recipe_ingredients${ingredient}">Ingredient</label>
+    <a type="button" class="left red btn-small text-shadow remove_ingredient"><i class="fas fa-minus"></i> Remove ingredient</a></div>`);
+  }
+});
+
+$("main").on('click', ".remove_ingredient", function () {
+  $(this).parent('div').remove();
+  ingredient--;
+});

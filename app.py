@@ -114,7 +114,7 @@ def add_recipe():
             "recipe_image": request.form.get("recipe_image"),
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
             "created_by": session["user"]
         }
@@ -133,7 +133,7 @@ def edit_recipe(recipe_id):
             "recipe_image": request.form.get("recipe_image"),
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
             "created_by": session["user"]
         }
