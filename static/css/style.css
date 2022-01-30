@@ -76,8 +76,7 @@ main {
     margin: auto;
     width: 100%;
     padding: 10px;
-    background-color: transparent;
-    
+    background-color: transparent;  
 }
 .card-image img {
     max-height: 600px;
