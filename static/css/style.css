@@ -75,8 +75,9 @@ main {
 .card {
     margin: auto;
     width: 100%;
-    border: 1px solid #a5d6a7;
     padding: 10px;
+    background-color: transparent;
+    
 }
 .card-image img {
     max-height: 600px;
@@ -87,4 +88,11 @@ main {
 
 .note {
     font-size: 12px;
+}
+
+.search {
+    margin: auto;
+    margin-bottom: 2%;
+    width: 98%;
+    background-color: rgb(198, 236, 218);
 }
