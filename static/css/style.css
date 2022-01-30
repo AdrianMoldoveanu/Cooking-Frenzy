@@ -16,18 +16,6 @@ body {
 
 }
 
-/*@media only screen and (min-width: 1200px) {
-    ..page-footer {
-        position:fixed;
-        bottom:0;
-        width: 100%;
-        height: auto;  
-        }
-    }*/
-    
-main {
-flex: 1 0 auto;
-}
 
 .btn-small {
     margin: 5px;
@@ -65,7 +53,12 @@ flex: 1 0 auto;
 #links a:hover {
     color: rgb(106, 80, 255);
 }
-/* Navbar */
+
+main {
+    flex: 1 0 auto;
+    }
+
+/* Lists */
 
 .ingredients_list li {
     display: inline;
@@ -75,4 +68,19 @@ flex: 1 0 auto;
 
 .steps_list {
     padding: 5px;
+}
+
+/* Cards */
+
+.card {
+    margin: auto;
+    width: 100%;
+    border: 1px solid #a5d6a7;
+    padding: 10px;
+}
+.card-image img {
+    max-height: 600px;
+    min-height: 600px;
+    overflow: hidden;
+    object-fit: cover;
 }
