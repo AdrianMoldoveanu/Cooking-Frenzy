@@ -84,3 +84,7 @@ main {
     overflow: hidden;
     object-fit: cover;
 }
+
+.note {
+    font-size: 12px;
+}
