@@ -78,18 +78,26 @@ $("main").on('click', ".remove_preparation_step", function () {
   preparation_step--;
 });
 
+
+
 function sendMail(contactForm) {
-  emailjs.send("service_fzrgkad", "adrian1986", {
+  emailjs.send("service_nspvhvv", "Adrian", {
       "from_name": contactForm.name.value,
-      "from_email": contactForm.emailaddress.value,
+      "from_email": contactForm.email.value,
       "project_request": contactForm.projectsummary.value
   })
   .then(
       function(response) {
           console.log("SUCCESS", response);
+          window.setTimeout(function () {
+            location.reload();
+          }, 1000);
       },
       function(error) {
           console.log("FAILED", error);
+          window.setTimeout(function () {
+            location.reload();
+          }, 1000);
       }
   );
   return false;  // To block from loading a new page

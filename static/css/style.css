@@ -95,3 +95,11 @@ main {
     width: 98%;
     background-color: rgb(198, 236, 218);
 }
+
+.contact {
+    margin: auto;
+    margin-top: 2%;
+    width: 98%;
+    background-color: rgb(198, 236, 218);
+    border: 1px solid #a5d6a7;
+}
