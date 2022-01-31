@@ -46,7 +46,7 @@ $(".add_ingredient").click(function (e) {
     <input id="recipe_ingredients${ingredient}" name="recipe_ingredients" type="text" data-length="150" 
       minlength="2" maxlength="150" class="validate" required>
     <label for="recipe_ingredients${ingredient}">Ingredient</label>
-    <a type="button" class="red btn-small text-shadow black-text remove_ingredient"><i class="fas fa-minus"></i> Remove ingredient</a></div>`);
+    <a type="button" class="red btn-small text-shadow black-text remove_ingredient">Remove ingredient</a></div>`);
   }
 });
 
@@ -69,7 +69,7 @@ $(".add_preparation_step").click(function (e) {
     <input id="recipe_method${preparation_step}" name="recipe_method" type="text" data-length="500" 
       minlength="5" maxlength="500" class="validate" required>
     <label for="recipe_method${preparation_step}">Preparation step</label>
-    <a type="button" class="red btn-small text-shadow black-text remove_preparation_step"><i class="fas fa-minus"></i> Remove step</a></div>`);
+    <a type="button" class="red btn-small text-shadow black-text remove_preparation_step">Remove step</a></div>`);
   }
 });
 
