@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(93, 179, 153, 0.5);
 }
@@ -13,6 +16,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Poppins', sans-serif;
 
 }
 
