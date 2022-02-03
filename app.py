@@ -24,7 +24,7 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
-
+# Search feature functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -106,7 +106,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+# Add recipe functionality
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -125,7 +125,7 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
-
+# Edit recipe functionality
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -146,7 +146,7 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe,
             categories=categories)
 
-
+# Delete recipe functionality
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
@@ -159,7 +159,7 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
-
+# Add category functionality admin only
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -172,7 +172,7 @@ def add_category():
 
     return render_template("add_category.html")
 
-
+# Edit category functionality admin only
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -186,7 +186,7 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
-
+# Delete category functionality admin only
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
