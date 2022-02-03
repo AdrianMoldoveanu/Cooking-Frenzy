@@ -3,7 +3,7 @@ $(document).ready(function () {
   $(".collapsible").collapsible();
   $("select").formSelect();
 
-  // validate materialze select function //
+  // validate materialze select function
   validateMaterializeSelect();
   function validateMaterializeSelect() {
       let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
@@ -33,7 +33,7 @@ $(document).ready(function () {
   }
 });
 
-// Add ingredients //
+// Add ingredients
 
 let ingredient = 1;
 let max_ingredients = 20;
@@ -56,7 +56,7 @@ $("main").on('click', ".remove_ingredient", function () {
   ingredient--;
 });
 
-// Add preparation steps //
+// Add preparation steps
 
 let preparation_step = 1;
 let max_preparation_steps = 20;
@@ -79,7 +79,7 @@ $("main").on('click', ".remove_preparation_step", function () {
   preparation_step--;
 });
 
-// Receive emails from users functionality //
+// Receive emails from users functionality
 function sendMail(contactForm) {
   emailjs.send("service_nspvhvv", "Adrian", {
       "from_name": contactForm.name.value,
@@ -100,5 +100,5 @@ function sendMail(contactForm) {
           }, 1000);
       }
   );
-  return false;  // To block from loading a new page
+  return false;
 }
