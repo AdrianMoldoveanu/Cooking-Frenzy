@@ -48,12 +48,14 @@ $(".add_ingredient").click(function (e) {
       minlength="2" maxlength="150" class="validate" required>
     <label for="recipe_ingredients${ingredient}">Ingredient</label>
     <a type="button" class="red btn-small text-shadow black-text remove_ingredient">Remove ingredient</a></div>`);
+    console.log ("Ingredient added succesfully");
   }
 });
 
 $("main").on('click', ".remove_ingredient", function () {
   $(this).parent('div').remove();
   ingredient--;
+  console.log ("Ingredient removed succesfully");
 });
 
 // Add preparation steps
@@ -71,12 +73,14 @@ $(".add_preparation_step").click(function (e) {
       minlength="5" maxlength="500" class="validate" required>
     <label for="recipe_method${preparation_step}">Preparation step</label>
     <a type="button" class="red btn-small text-shadow black-text remove_preparation_step">Remove step</a></div>`);
+    console.log ("Step added succesfully");
   }
 });
 
 $("main").on('click', ".remove_preparation_step", function () {
   $(this).parent('div').remove();
   preparation_step--;
+  console.log ("Step removed succesfully");
 });
 
 // Receive emails from users functionality
