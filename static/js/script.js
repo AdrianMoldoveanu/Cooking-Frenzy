@@ -2,7 +2,8 @@ $(document).ready(function () {
   $(".sidenav").sidenav({edge: "right"});
   $(".collapsible").collapsible();
   $("select").formSelect();
-  
+
+  // validate materialze select function //
   validateMaterializeSelect();
   function validateMaterializeSelect() {
       let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
@@ -78,8 +79,7 @@ $("main").on('click', ".remove_preparation_step", function () {
   preparation_step--;
 });
 
-
-
+// Receive emails from users functionality //
 function sendMail(contactForm) {
   emailjs.send("service_nspvhvv", "Adrian", {
       "from_name": contactForm.name.value,

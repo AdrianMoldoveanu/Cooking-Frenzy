@@ -1,29 +1,33 @@
 {% extends "base.html" %}
 {% block content%}
-
+<!-- Contact form -->
 <div class="row card-panel contact">
     <div class="row">
         <h3 class="center text-shadow">Got a project in mind?</h3>
         <h5 class="center text-shadow">Let's work together!</h5>
     </div>
     <form class="col s12" onsubmit="return sendMail(this);">
+      <!-- name field -->
       <div class="row">
         <div class="input-field col s6">
           <input id="name" type="text" class="validate" minlength="2" maxlength="25" required>
           <label for="name">Name</label>
         </div>
       </div>
+      <!-- email field -->
       <div class="row">
         <div class="input-field col s12">
           <input id="email" type="email" class="validate" minlength="5" maxlength="50" required>
           <label for="email">Email</label>
         </div>
       </div>
+      <!-- message field -->
       <div class="row">
         <div class="input-field col s12">
             <textarea id="projectsummary" class="materialize-textarea" minlength="5" maxlength="1500"></textarea>
           <label for="projectsummary">Type your message here</label>
         </div>
+        <!-- submit button -->
         <div class="row s12 m12 center">
             <button class="btn waves-effect waves-light green lighten-2 black-text text-shadow" type="submit" name="action">
                 Submit
