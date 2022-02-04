@@ -22,7 +22,7 @@
 </div>
 
 {% if recipes|length > 0 %}
-{% for recipe in recipes %}
+  {% for recipe in recipes %}
 <div class="row">
   <!-- recipe image -->
   <div class="col s12 m12">
@@ -77,10 +77,10 @@
     </div>
   </div>
 </div>
+{% endfor %}
 <!-- No results search message -->   
 {% else %}
-<h3 class="red-text text-darken-4 center-align">No Results Found</h3>
-{% endfor %}
+<h3 class="red-text text-darken-4 center-align">No Results Found!</h3>
 {% endif %}
 
 {% endblock %}
