@@ -123,13 +123,18 @@ main {
     background-size: cover;
     height: 100vh;
     min-height: 100%;
-  }
+}
 
 .error-text {
     background-color: #fff;
     color: #0000;
-  }
+}
   
 .top-margin-error {
     margin-top: 400px;
-  }  
+}
+  
+.welcome p {
+    color: rgb(31, 94, 23);
+    font-size: 1.5em;
+}  
