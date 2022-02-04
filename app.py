@@ -106,6 +106,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
 # Add recipe functionality
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
@@ -124,6 +125,7 @@ def add_recipe():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
 
 # Edit recipe functionality
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -146,11 +148,25 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe,
             categories=categories)
 
+
 # Delete recipe functionality
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-    flash("Recipe Successfully Deleted")
+    if "user" in session:
+
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+        if session["user"] == 'admin':
+            mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+            flash("Your recipe is deleted successfully")
+            return redirect(url_for("get_recipes"))
+
+        elif session["user"].lower() == recipe["created_by"].lower():
+            mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+            flash("Your recipe is deleted successfully")
+            return redirect(url_for("get_recipes"))
+
+    flash("Access denied. You can only delete your recipes!")
     return redirect(url_for("get_recipes"))
 
 
@@ -158,6 +174,7 @@ def delete_recipe(recipe_id):
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
 
 # Add category functionality admin only
 @app.route("/add_category", methods=["GET", "POST"])
@@ -171,6 +188,7 @@ def add_category():
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
+
 
 # Edit category functionality admin only
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
@@ -201,7 +219,7 @@ def contact():
 
 
 # Errors
-@app.errorexception(404)
+@app.errorhandler(404)
 def error_404(error):
     return render_template('error_404.html'), 404
 
