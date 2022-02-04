@@ -111,3 +111,25 @@ main {
     background-color: rgb(198, 236, 218);
     border: 1px solid #a5d6a7;
 }
+
+
+/* error */
+
+.error {
+    background-image: url("/static/images/error404.jpg");
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    min-height: 100%;
+  }
+
+.error-text {
+    background-color: #fff;
+    color: #0000;
+  }
+  
+.top-margin-error {
+    margin-top: 400px;
+  }  

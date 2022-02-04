@@ -186,6 +186,7 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+
 # Delete category functionality admin only
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
@@ -197,6 +198,12 @@ def delete_category(category_id):
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+
+# Errors
+@app.errorexception(404)
+def error_404(error):
+    return render_template('error_404.html'), 404
 
 
 if __name__ == "__main__":
