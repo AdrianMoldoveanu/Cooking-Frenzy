@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<section></section>
 <!-- Message for users which are not registered -->
 {% if session.user|lower == existing_user|lower %}
 <div class="row">
@@ -99,5 +100,5 @@
 {% else %}
 <h3 class="red-text text-darken-4 center-align">No Results Found!</h3>
 {% endif %}
-
+</section>
 {% endblock %}
