@@ -1,25 +1,28 @@
-# Welcome to Cooking Frenzy
-
-A full stack CRUD application that allows users to register and log in to create, edit, update and delete recipes.
-
-This application uses Python on the back-end with the Flask web framework, and uses MongoDB for the database.
-
-For the front-end it uses Materialize with some custom CSS.
-
-Built for Milestone Project 3 in the Full Stack Software Development Course at Code Institute for the Data Centric Development module.
-
-The live project can be viewed [here](https://cooking-frenzy.herokuapp.com/).
+# Cooking Frenzy
 
 
-## UX
+# Description
+
+- A full stack CRUD application that allows users to register and log in to create, edit, update and delete recipes.
+
+- This application uses Python on the back-end with the Flask web framework, and uses MongoDB for the database.
+
+- For the front-end it uses Materialize with some custom CSS.
+
+- Built for Milestone Project 3 in the Full Stack Software Development Course at Code Institute for the Data Centric Development module.
+
+- The live project can be viewed [here](https://cooking-frenzy.herokuapp.com/).
+
+
+# UX
  
-This application was built to allow users create and share recipes, as well as updating and deleting them as necessary. 
+- This application was built to allow users create and share recipes, as well as updating and deleting them as necessary. 
 
-The application provides a registration page for new users to register on the site, and a log in page to sign in after they have registered. 
+- The application provides a registration page for new users to register on the site, and a log in page to sign in after they have registered. 
 
-Any visitor can browse the recipes created on the site but only logged in users can add, edit and delete recipes.
+- Any visitor can browse the recipes created on the site but only logged in users can add, edit and delete recipes.
 
-The search feature offers searching by category, recipe name, ingredients or author.
+- The search feature offers searching by category, recipe name, ingredients or author.
 
 
 
@@ -73,84 +76,81 @@ As a user I can:
 
  ## Feature 1  
 
- The **User Registration and User Login** feature hashes user passwords so user's passwords are not stored in the application database as simple text strings as they are entered by the user when registering. 
+- The **User Registration and User Login** feature hashes user passwords so user's passwords are not stored in the application database as simple text strings as they are entered by the user when registering. 
 
- This means that even by viewing the database documents you will not be able to see a user's password. The Registration form and Login forms use a lot of HTML validation including Regex pattern detection to ensure that usernames and password etc are all entered in the correct format. 
+- This means that even by viewing the database documents you will not be able to see a user's password. The Registration form and Login forms use a lot of HTML validation including Regex pattern detection to ensure that usernames and password etc are all entered in the correct format. 
 
- These forms also provide dynamic helper text to let a user know if there are any problems with anything they have entered in one of the fields, or if everything is ok. 
+- These forms also provide dynamic helper text to let a user know if there are any problems with anything they have entered in one of the fields, or if everything is ok. 
 
- Usernames also have to be unique and the application will check through the database to ensure usernames aren't already taken before a new user can be registered.
+- Usernames also have to be unique and the application will check through the database to ensure usernames aren't already taken before a new user can be registered.
 
 
 ## Feature 2  
 
-**User Authorisation** built within the application ensures that visitors to the site cannot access URL routes for adding, updating or deleting recipes and will be redirected to the Login page if any of these URLs are entered in the browser address bar. 
+- **User Authorisation** built within the application ensures that visitors to the site cannot access URL routes for adding, updating or deleting recipes and will be redirected to the Login page if any of these URLs are entered in the browser address bar. 
   
-  Also, once a user is logged in they will only be able to Edit/Update or Delete recipes only created by them alone. They will not be able to do the same to recipes created by other users. 
+- Also, once a user is logged in they will only be able to Edit/Update or Delete recipes only created by them alone. They will not be able to do the same to recipes created by other users. 
   
-  The option to log out of the site is available to users who are logged into an active session.
+- The option to log out of the site is available to users who are logged into an active session.
 
 
 ## Feature 3 
 
-
-
- 
-  The feature for **Adding Recipes** will be available for users who are logged in and is accessed by the 'New Recipe' button in the top right-hand corner of the UI. 
+- The feature for **Adding Recipes** will be available for users who are logged in and is accessed by the 'New Recipe' button in the top right-hand corner of the UI. 
   
-  The user can add an image url which will display the image (high resultion images are recommended)
+- The user can add an image url which will display the image (high resultion images are recommended)
 
-  The user will add a recipe name.
+- The user will add a recipe name.
 
-  The user will second a preset category from the dropdown.
+- The user will second a preset category from the dropdown.
 
-  The user will start adding ingredients. The ingredients need to be added one by one n separate fields with the help of the 'Add ingredient' button which will be saved in an unordered list.
+- The user will start adding ingredients. The ingredients need to be added one by one n separate fields with the help of the 'Add ingredient' button which will be saved in an unordered list.
 
-  The user will then add preparation steps. Same as ingredients they need to be added one by one with the help of 'Add step' button which will be saved in an ordered list.
+- The user will then add preparation steps. Same as ingredients they need to be added one by one with the help of 'Add step' button which will be saved in an ordered list.
 
-  The final step is submitting the form by clicking the 'Add recipe' button at the bottom of the form.
+- The final step is submitting the form by clicking the 'Add recipe' button at the bottom of the form.
 
 
 ## Feature 4 
 
-  When **Searching Recipes** in the application a user can search recipes by recipe name, ingredients, categories or author name.
+- When **Searching Recipes** in the application a user can search recipes by recipe name, ingredients, categories or author name.
 
 
 ## Feature 5 
 
-  **Contact the site owner** can be done through the contact form which can be found in the links section in the footer.
+- **Contact the site owner** can be done through the contact form which can be found in the links section in the footer.
 
-  The form will take the name and email of the user and a message which will be received by the site owner.
+- The form will take the name and email of the user and a message which will be received by the site owner.
 
 
 ## Feature 6 
 
-  When the use is on their **Profile** they can see all the recipes they created.
+- When the use is on their **Profile** they can see all the recipes they created.
 
 
- ## Feature 7
+## Feature 7
 
-  **Responsive** on all devices and browsers.
+- **Responsive** on all devices and browsers.
 
 
 
 ## Admin Features
 
 ## Feature 1
-  Admin can add new categories.
+- Admin can add new categories.
 
-  A ' Manage Categories' option will apear in the navbar if the admin is login.
+- A ' Manage Categories' option will apear in the navbar if the admin is login.
 
-  The form will consist of a field that requires the new category name.
+- The form will consist of a field that requires the new category name.
 
-  The category will be created when the submit button is clicked.
+- The category will be created when the submit button is clicked.
 
 
 ## Feature 2
 
-   Admin can delete and edit any recipe without having to be the user that created the recipe.
+- Admin can delete and edit any recipe without having to be the user that created the recipe.
 
-   If an issue with a recipe is reported through the contact form the admin will be able to investigate and take the recipe down if necessary.
+- If an issue with a recipe is reported through the contact form the admin will be able to investigate and take the recipe down if necessary.
 
 
 
@@ -215,11 +215,11 @@ All of the following files were checked using the W3C Validation Tool [here](htt
 
 - Edit Recipe Page [View](static/testing/edit_recipe.PNG)
   
-  A number of 3 errors were found upon validation regarding the ingredients and recipe method appearing as duplicates.
+  - A number of 3 errors were found upon validation regarding the ingredients and recipe method appearing as duplicates.
 
-  The fix would be to modify the database and add fields for each ingredient and preparation step.
+  - The fix would be to modify the database and add fields for each ingredient and preparation step.
 
-  Although it does not break the functionality, it would be something I will work on to fix.
+  - Although it does not break the functionality, it would be something I will work on to fix.
 
 - Manage Categories Page [View](static/testing/manage_categories.PNG)
 
@@ -239,42 +239,45 @@ For validating python code I have used PEP8 Online [here](http://pep8online.com/
 
 - Python Code validation [View](static/testing/python.PNG)
 
-There are a number of forms used on this application to accept user input including the login form, signup form, search and filter forms on the recipe list page and on the add and edit recipe pages. Various forms and levels of HTML validation has been used on form inputs to verify inputs to each form field. These forms were tested while being developed to ensure that the validation was having the desired effect and providing the desired outcome.
+- There are a number of forms used on this application to accept user input including the login form, signup form, search and filter forms on the recipe list page and on the add and edit recipe pages. 
+
+- Various forms and levels of HTML validation has been used on form inputs to verify inputs to each form field. These forms were tested while being developed to ensure that the validation was having the desired effect and providing the desired outcome.
 
 ## Further Testing
 
 
-### Design 
+# Design 
 
-#### Colour Scheme
+## Colour Scheme
            
-     - The two main colours used are white and blue to impact better with the background image.
+- The two main colours used are black for text and materialize green accents to impact better with the background image and site goal.
        
-#### Typography
+## Typography
 
-     - Vollkorn with fallback on Sans Serif is the main font used throughout the website. I find it both attractive and appropiate.
-     - Graduate with fallback on Sans Serif is used for the results display, timer and progress.The numbers look like football scoreboard numbers and goes well with the theme.
+- Poppins with fallback on Sans Serif is the main font used throughout the website. I find it both attractive and appropiate.
 
-#### Imagery 
+## Imagery 
 
-    - As a background image I choose a cartoon football pitch to describe that the quiz is about football but in his essence is still a game. For the image I choose clean pictures with enough resolution to not appear pixelated on any screen size.
+- As a background image I choose a background with vegetables and chopping board to make the site goal clear from the first seconds.
+
+- For the image I choose clean pictures with enough resolution to not appear pixelated on any screen size.
+         
+
+# Wireframes
+
+- Home Page/Recipes Wireframe - [View](static/wireframes/homepage.png)
+
+- Log In/Register Page  Wireframe - [View](static/wireframes/login_register.png)
+
+- New Recipe Page Wireframe - [View](static/wireframes/New_recipe.png)
+
+- Edit Recipe Wireframe - [View](static/wireframes/Edit_recipe.png)
+
+- Profile Page Wireframe - [View](static/wireframes/profile.png)
      
-### Wireframes
+- Contact Page  Wireframe - [View](static/wireframes/contact_form.png)
 
-     -   Start Page Wireframe - [View](https://i.imgur.com/csdzecc.png)
      
-     -   Main Page  Wireframe - [View](https://i.imgur.com/qmrQaxd.png)
-
-     -   Results Page  Wireframe - [View](https://i.imgur.com/13HlDpg.png)
-
-     -   Start Page Mobile Wireframe - [View](https://i.imgur.com/O8REOHc.png)
-
-     -   Main Page Mobile Wireframe - [View](https://i.imgur.com/IF8y6Hy.png)
-
-     -   Results Page Mobile Wireframe - [View](https://i.imgur.com/a2J6mXO.p
-
-
-
 # Deployment
 
 ## GitHub Pages
