@@ -40,13 +40,10 @@ As a user I can:
 - read the method for preparing the recipe
 
 
-This site was built on the basis of ideas from initial wireframes created in Adobe XD and exported image files for these can be seen below. These image files as well as the XD project file can be found in the main project folder:
 
-![wireframe prototype 1](design/androidmobile1.png)
-![wireframe prototype 2](design/androidmobile2.png)
-![wireframe prototype 3](design/androidmobile3.png)
 
-The initial designs were based on the idea that a very basic login feature would be used but as the project developed I decided to implement a slightly more sophisticated user registration and authorisation feature and the original designs were also improved upon as the front-end of the project was being built. The improvements were made for the benefit of User Experience and to make the application more visually appealing as it was being styled throughout development.
+
+
 
 ## Features
  
@@ -104,12 +101,7 @@ This project was developed incrementally with continuous use of `console.log` st
 This project was tested for responsiveness using the Chrome Developer Tools mobile device simulator. It was also viewed on physical Samsung Galaxy A5 (2017) mobile device to ensure good responsive behaviour. The site was also tested in Mozilla Firefox (version 66) and Microsoft Edge (version 42) browsers to ensure appearance and functionality of the site was as expected across all 3 of these browsers.
 
 All of the following routes were checked using the W3C Validation Tool [here](http://validator.w3.org), and both HTML and CSS files passed without error:
-- /
-- /login
-- /add_recipe
-- /edit_recipe/<recipe_id>/
-- /recipe/<recipe_id>/
-- /signup
+
 
 There are a number of forms used on this application to accept user input including the login form, signup form, search and filter forms on the recipe list page and on the add and edit recipe pages. Various forms and levels of HTML validation has been used on form inputs to verify inputs to each form field. These forms were tested while being developed to ensure that the validation was having the desired effect and providing the desired outcome.
 
@@ -139,8 +131,3 @@ The live project can be viewed [here](http://the-open-cookbook.herokuapp.com/).
 
 ## Credits
 
-##### Acknowledgements
-
-- The Authorisation function used on routes requiring user log in was based on code from a Flask Snippet written by Alex Abbott which can be found [here](http://flask.pocoo.org/snippets/98/)
-- The pagination feature used on the recipe list in this application was based on a coding tutorial by David Acosta which can be found [here](https://www.youtube.com/watch?v=Xznn-ggD0GU) on YouTube
-- All initial recipes (of which there are ten), including their images, were recipes taken from the BBC GoodFood website which can be found [here](https://www.bbcgoodfood.com/recipes)

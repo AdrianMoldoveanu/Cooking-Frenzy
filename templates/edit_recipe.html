@@ -4,86 +4,87 @@
 <h3 class="light-green-text text-darken-4 text-shadow center-align">Edit Recipe</h3>
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-      <div class="row">
+  <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+    <div class="row">
       <div class="input-field col s12">
         <i class="fas fa-image light-green-text text-darken-4 text-shadow prefix"></i>
-        <input id="recipe_image" name="recipe_image" type="url" value="{{ recipe.recipe_image }}"
-          class="validate" required>
+        <input id="recipe_image" name="recipe_image" type="url" value="{{ recipe.recipe_image }}" class="validate"
+          required>
         <label for="recipe_image">Place your image url here</label>
-        <p class="note">*Note: To add an image please right-click on the desired image, click on 'Copy image address', then paste into the required field!</p>
+        <p class="note">*Note: To add an image please right-click on the desired image, click on 'Copy image address',
+          then paste into the required field!</p>
       </div>
     </div>
-      <!--recipe name-->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-pencil-alt prefix light-green-text text-darken-4 text-shadow"></i>
-          <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
-           value="{{ recipe.recipe_name }}" type="text" class="validate" required>
-          <label for="recipe_name">Recipe Name</label>
-        </div>
+    <!--recipe name-->
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4 text-shadow"></i>
+        <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{ recipe.recipe_name }}"
+          type="text" class="validate" required>
+        <label for="recipe_name">Recipe Name</label>
       </div>
-      <!--recipe category-->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-folder-open prefix light-green-text text-darken-4 text-shadow"></i>
-          <select id="category_name" name="category_name" class="validate" required>
-            <option value="" disabled>Choose Category</option>
-            {% for category in categories %}
-               {% if category.category_name == recipe.category_name %}
-               <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-               {% else %}
-               <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-               {% endif %}
-            {% endfor %}
-          </select>
-          <label for="category_name">Recipe Category</label>
-        </div>
-      </div>
-      <!--recipe ingredients-->
-      <div class="row"> 
-        {% for ingredient in recipe.recipe_ingredients %}
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="fas fa-align-left prefix light-green-text text-darken-4 text-shadow"></i>
-              <input id="recipe_ingredients" name="recipe_ingredients" type="text" data-length="150" minlength="2"
-                value="{{ ingredient }}" maxlength="150" class="validate" required>
-              <label for="recipe_ingredients{{ loop.index }}">Ingredient</label>
-              <a type="button" class="btn-small red black-text text-shadow remove_ingredient">
-               Remove ingredient</a>
-            </div>
-          </div>
+    </div>
+    <!--recipe category-->
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="fas fa-folder-open prefix light-green-text text-darken-4 text-shadow"></i>
+        <select id="category_name" name="category_name" class="validate" required>
+          <option value="" disabled>Choose Category</option>
+          {% for category in categories %}
+          {% if category.category_name == recipe.category_name %}
+          <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+          {% else %}
+          <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+          {% endif %}
           {% endfor %}
-          <div class="row list_of_ingredients">
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <a class="btn-small green lighten-2 black-text text-shadow add_ingredient"> 
-                Add ingredient
-              </a>
-            </div>
-          </div>
+        </select>
+        <label for="category_name">Recipe Category</label>
+      </div>
+    </div>
+    <!--recipe ingredients-->
+    <div class="row">
+      {% for ingredient in recipe.recipe_ingredients %}
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fas fa-align-left prefix light-green-text text-darken-4 text-shadow"></i>
+          <input id="recipe_ingredients" name="recipe_ingredients" type="text" data-length="150" minlength="2"
+            value="{{ ingredient }}" maxlength="150" class="validate" required>
+          <label for="recipe_ingredients{{ loop.index }}">Ingredient</label>
+          <a type="button" class="btn-small red black-text text-shadow remove_ingredient">
+            Remove ingredient</a>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="row list_of_ingredients">
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <a class="btn-small green lighten-2 black-text text-shadow add_ingredient">
+            Add ingredient
+          </a>
+        </div>
+      </div>
       <!--recipe preparation steps-->
       {% for preparation_step in recipe.recipe_method %}
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="fas fa-align-justify fa-2x prefix light-green-text text-darken-4 text-shadow"></i>
-              <input id="recipe_method" name="recipe_method" type="text" data-length="500" minlength="5"
-                value="{{ preparation_step }}" maxlength="500" class="validate" required>
-              <label for="recipe_method{{ loop.index }}">Instruction</label>
-              <a type="button" class="btn-small red black-text text-shadow remove_preparation_step">
-               Remove step</a>
-            </div>
-          </div>
-          {% endfor %}
-          <div class="row list_of_preparation_steps"></div>
-          <div class="row">
-            <div class="input-field col s12">
-              <a class="btn-small green lighten-2 black-text text-shadow add_preparation_step"> 
-                Add step
-              </a>
-            </div>
-          </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fas fa-align-justify fa-2x prefix light-green-text text-darken-4 text-shadow"></i>
+          <input id="recipe_method" name="recipe_method" type="text" data-length="500" minlength="5"
+            value="{{ preparation_step }}" maxlength="500" class="validate" required>
+          <label for="recipe_method{{ loop.index }}">Instruction</label>
+          <a type="button" class="btn-small red black-text text-shadow remove_preparation_step">
+            Remove step</a>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="row list_of_preparation_steps"></div>
+      <div class="row">
+        <div class="input-field col s12">
+          <a class="btn-small green lighten-2 black-text text-shadow add_preparation_step">
+            Add step
+          </a>
+        </div>
+      </div>
       <!-- submit button -->
       <div class="row">
         <div class="col s12 center-align">
@@ -96,7 +97,8 @@
           </button>
         </div>
       </div>
-    </form>
-  </div>
+    </div>  
+  </form>
+</div>
 
 {% endblock %}
