@@ -24,6 +24,7 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
+
 # Search feature functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -94,8 +95,8 @@ def profile(username):
 
     if session.get("user"):
         recipes = mongo.db.recipes.find().sort("_id", -1)
-        return render_template("profile.html", username=username, recipes=recipes)
-
+        return render_template("profile.html", username=username,
+                               recipes=recipes)
     return redirect(url_for("login"))
 
 
@@ -140,13 +141,13 @@ def edit_recipe(recipe_id):
             "created_by": session["user"]
         }
         mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},
-        {"$set": submit})
+                                    {"$set": submit})
         flash("Recipe Successfully Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe,
-            categories=categories)
+                           categories=categories)
 
 
 # Delete recipe functionality
@@ -194,10 +195,9 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.update_one({"_id": ObjectId(category_id)}, {"$set": submit})
+        submit = {"category_name": request.form.get("category_name")}
+        mongo.db.categories.update_one({"_id": ObjectId(category_id)},
+                                       {"$set": submit})
         flash("Category Successfully Updated")
         return redirect(url_for("get_categories"))
 

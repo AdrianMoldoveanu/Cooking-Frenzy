@@ -64,8 +64,10 @@
                 <div class="ingredients">
                     <ul class="ingredients_list">
                       {% for ingredient in recipe.recipe_ingredients %}
-                      <i class="fas fa-check fa-xs"></i>
-                          <li>{{ ingredient|capitalize }}</li>
+                          <li>
+                            <i class="fas fa-check fa-xs"></i>
+                            {{ ingredient|capitalize }}
+                          </li>
                       {% endfor %}
                     </ul>
                 </div>
