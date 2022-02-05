@@ -50,8 +50,8 @@
           <input id="recipe_ingredients" name="recipe_ingredients" type="text" data-length="150" minlength="2"
             value="{{ ingredient }}" maxlength="150" class="validate" required>
           <label for="recipe_ingredients{{ loop.index }}">Ingredient</label>
-          <a type="button" class="btn-small red black-text text-shadow remove_ingredient">
-            Remove ingredient</a>
+          <button type="button" class="btn-small red black-text text-shadow remove_ingredient">
+            Remove ingredient</button>
         </div>
       </div>
       {% endfor %}
@@ -59,9 +59,9 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <a class="btn-small green lighten-2 black-text text-shadow add_ingredient">
+          <button type="button" class="btn-small green lighten-2 black-text text-shadow add_ingredient">
             Add ingredient
-          </a>
+          </button>
         </div>
       </div>
       <!--recipe preparation steps-->
@@ -72,17 +72,17 @@
           <input id="recipe_method" name="recipe_method" type="text" data-length="500" minlength="5"
             value="{{ preparation_step }}" maxlength="500" class="validate" required>
           <label for="recipe_method{{ loop.index }}">Instruction</label>
-          <a type="button" class="btn-small red black-text text-shadow remove_preparation_step">
-            Remove step</a>
+          <button type="button" class="btn-small red black-text text-shadow remove_preparation_step">
+            Remove step</button>
         </div>
       </div>
       {% endfor %}
       <div class="row list_of_preparation_steps"></div>
       <div class="row">
         <div class="input-field col s12">
-          <a class="btn-small green lighten-2 black-text text-shadow add_preparation_step">
+          <button type="button" class="btn-small green lighten-2 black-text text-shadow add_preparation_step">
             Add step
-          </a>
+          </button>
         </div>
       </div>
       <!-- submit button -->
