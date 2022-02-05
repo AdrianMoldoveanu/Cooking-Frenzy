@@ -6,7 +6,7 @@ This application uses Python on the back-end with the Flask web framework, and u
 
 For the front-end it uses Materialize with some custom CSS.
 
-Built for Milestone Project no.4 in the Full Stack Software Development Course at Code Institute for the Data Centric Development module.
+Built for Milestone Project 3 in the Full Stack Software Development Course at Code Institute for the Data Centric Development module.
 
 The live project can be viewed [here](https://cooking-frenzy.herokuapp.com/).
 
@@ -21,57 +21,156 @@ Any visitor can browse the recipes created on the site but only logged in users 
 
 The search feature offers searching by category, recipe name, ingredients or author.
 
-##### User Stories
+
+
+# User Stories
 
 As a user I can:
-- register as a user on the site
-- log in to the site once registered
-- add new recipes to the site (when logged in)
-- edit recipes I create on the site (when logged in)
-- delete any recipes I created on the site (when logged in)
-- view a list of recipes stored on the site
-- search the list of recipes by a recipe name
-- filter the list of recipes by category keywords
-- sort the list of recipes by ingredients keywords
-- sort the list of recipes by author
-- add an image for the recipe
-- click on a recipe to see information about the recipe
-- see the ingredients for a selected recipe
-- read the method for preparing the recipe
+
+- Navigate through the site with ease by using the navbar or the footer.
+
+- See all recipes without being a registered user.
+
+- Register as a user on the site.
+
+- Log in to the site once registered.
+
+- Have a Profile page where I can see only my recipes.
+
+- Add new recipes to the site (when logged in).
+
+- Edit recipes I create on the site (when logged in).
+
+- Delete any recipes I created on the site (when logged in).
+
+- View a list of recipes stored on the site.
+
+- Search the list of recipes by a recipe name.
+
+- Search the list of recipes by category name.
+
+- Search the list of recipes by ingredients.
+
+- Search the list of recipes by author.
+
+- Click on a recipe to see information about the recipe.
+
+- See the ingredients for a selected recipe.
+
+- Read the method for preparing the recipe.
+
+- Add images to created recipes.
+
+- Contact the site owner through email
+
+- Find the socials in the footer.
 
 
 
-
-
-
-
-## Features
+ # Features
  
-##### Existing Features
-- Feature 1 - The **User Registration and User Login** feature hashes user passwords so user's passwords are not stored in the application database as simple text strings as they are entered by the user when registering. This means that even by viewing the database documents you will not be able to see a user's password. The Registration form and Login forms use a lot of HTML validation including Regex pattern detection to ensure that usernames and password etc are all entered in the correct format. These forms also provide dynamic helper text to let a user know if there are any problems with anything they have entered in one of the fields, or if everything is ok. Usernames also have to be unique and the application will check through the database to ensure usernames aren't already taken before a new user can be registered.
+ ## Existing Features
 
-- Feature 2 - **User Authorisation** built within the application ensures that visitors to the site cannot access URL routes for adding, updating or deleting recipes and will be redirected to the Login page if any of these URLs are entered in the browser address bar. 
+ ## Feature 1  
+
+ The **User Registration and User Login** feature hashes user passwords so user's passwords are not stored in the application database as simple text strings as they are entered by the user when registering. 
+
+ This means that even by viewing the database documents you will not be able to see a user's password. The Registration form and Login forms use a lot of HTML validation including Regex pattern detection to ensure that usernames and password etc are all entered in the correct format. 
+
+ These forms also provide dynamic helper text to let a user know if there are any problems with anything they have entered in one of the fields, or if everything is ok. 
+
+ Usernames also have to be unique and the application will check through the database to ensure usernames aren't already taken before a new user can be registered.
+
+
+## Feature 2  
+
+**User Authorisation** built within the application ensures that visitors to the site cannot access URL routes for adding, updating or deleting recipes and will be redirected to the Login page if any of these URLs are entered in the browser address bar. 
+  
   Also, once a user is logged in they will only be able to Edit/Update or Delete recipes only created by them alone. They will not be able to do the same to recipes created by other users. 
+  
   The option to log out of the site is available to users who are logged into an active session.
 
-- Feature 3 - The feature for **Adding Recipes** will be available for users who are logged in and is accessed by the 'New Recipe' button in the top right-hand corner of the UI. 
-  This will take the user to a full page form that will allow them to submit detailed information about a new recipe as well as adding an image (a remotely hosted image, added by URL) dynamically adding and removing ingredients and steps in the recipe method. 
-  Again, this form provides helper text assistance to users to let them know if there are problems with entries in form fields or whether everything is ok.
 
-- Feature 4 - When **Browsing Recipes** in the application a user can search recipe names by entering a search string in the provided text field and this will then search for recipes whose name includes the query string.
-  There is a drop-down menu of cuisine types so a user can filter the recipe list by recipes only matching the selected cuisins. 
-  In addition to that there are sorting buttons to sort all recipes in the application by ascending and descending alphabetical order, as well as by the most 'liked' recipes.
+## Feature 3 
 
-- Feature 5 - When the use is on their **Profile** they can see all the recipes they created.
 
-##### Future Features
-- Feature 1 - A User Dashboard where they can edit their own user details or change their password. 
-- Feature 2 - A password reset feature would be a useful feature to be built that will allow a user to reset their password when they unfortunately forget the password they entered when they registered to use the application. 
+
+ 
+  The feature for **Adding Recipes** will be available for users who are logged in and is accessed by the 'New Recipe' button in the top right-hand corner of the UI. 
+  
+  The user can add an image url which will display the image (high resultion images are recommended)
+
+  The user will add a recipe name.
+
+  The user will second a preset category from the dropdown.
+
+  The user will start adding ingredients. The ingredients need to be added one by one n separate fields with the help of the 'Add ingredient' button which will be saved in an unordered list.
+
+  The user will then add preparation steps. Same as ingredients they need to be added one by one with the help of 'Add step' button which will be saved in an ordered list.
+
+  The final step is submitting the form by clicking the 'Add recipe' button at the bottom of the form.
+
+
+## Feature 4 
+
+  When **Searching Recipes** in the application a user can search recipes by recipe name, ingredients, categories or author name.
+
+
+## Feature 5 
+
+  **Contact the site owner** can be done through the contact form which can be found in the links section in the footer.
+
+  The form will take the name and email of the user and a message which will be received by the site owner.
+
+
+## Feature 6 
+
+  When the use is on their **Profile** they can see all the recipes they created.
+
+
+ ## Feature 7
+
+  **Responsive** on all devices and browsers.
+
+
+
+## Admin Features
+
+## Feature 1
+  Admin can add new categories.
+
+  A ' Manage Categories' option will apear in the navbar if the admin is login.
+
+  The form will consist of a field that requires the new category name.
+
+  The category will be created when the submit button is clicked.
+
+
+## Feature 2
+
+   Admin can delete and edit any recipe without having to be the user that created the recipe.
+
+   If an issue with a recipe is reported through the contact form the admin will be able to investigate and take the recipe down if necessary.
+
+
+
+## Future Features
+
+- Feature 1 - A User Dashboard where they can edit their own user details or change their password.
+
+- Feature 2 - A password reset feature would be a useful feature to be built that will allow a user to reset their password when they unfortunately forget the password they entered when they registered to use the application.
+
 - Feature 3 - Users to be able to like other users recipes.
-  Maybe eventually a rating system based on scale form 1 - 10.
-- Feature 4 - Add a cooking utensils section from which users can purchase desired utensils and the site owner can get a percentage of the sales.  
 
-## Technologies Used
+  Maybe eventually a rating system based on scale form 1 - 10.
+
+- Feature 4 - Add a cooking utensils section from which users can purchase desired utensils and the site owner can get a percentage of the sales.
+
+- Feature 5 - Users can share recipes on social media.
+
+
+
+# Technologies Used
 
 Languages, frameworks, libraries, and any other tools used to construct this project. 
 
@@ -94,40 +193,155 @@ Languages, frameworks, libraries, and any other tools used to construct this pro
 - [MongoDB](https://www.mongodb.com/)
     - This project uses **MongoDB**, and more specifically MongoDB Atlas, as it's database system used to store data about users and recipes.
 
-## Testing
 
-This project was developed incrementally with continuous use of `console.log` statement in JavaScript and the `print()` function in Python to repeatedly check the changes made in the application and to ensure all changes to source code were providing the desired outcome in the browser. The site was build using Google Chrome browser (version 74) and then later tested in other browsers; FireFox (version 66) and Edge (version 42).
 
-This project was tested for responsiveness using the Chrome Developer Tools mobile device simulator. It was also viewed on physical Samsung Galaxy A5 (2017) mobile device to ensure good responsive behaviour. The site was also tested in Mozilla Firefox (version 66) and Microsoft Edge (version 42) browsers to ensure appearance and functionality of the site was as expected across all 3 of these browsers.
+# Testing
 
-All of the following routes were checked using the W3C Validation Tool [here](http://validator.w3.org), and both HTML and CSS files passed without error:
+This project was developed incrementally with continuous use of `console.log` statement in JavaScript and the `print()` function in Python to repeatedly check the changes made in the application and to ensure all changes to source code were providing the desired outcome in the browser. The site was build using Google Chrome browser  and then later tested in other browsers: FireFox and Edge.
 
+This project was tested for responsiveness using the Chrome Developer Tools mobile device simulator. It was also viewed on physical Samsung Galaxy A5 (2017) mobile device to ensure good responsive behaviour. The site was also tested in Mozilla Firefox  and Microsoft Edge  browsers to ensure appearance and functionality of the site was as expected across all 3 of these browsers.
+
+### HTML and CSS files
+
+All of the following files were checked using the W3C Validation Tool [here](http://validator.w3.org), and both HTML and CSS files passed without error:
+
+- Home Page  [View](static/testing/recipes.PNG)
+
+- Log In Page [View](static/testing/login.PNG)
+
+- Register Page [View](static/testing/register.PNG)
+
+- Add Recipe Page [View](static/testing/add_recipe.PNG)
+
+- Edit Recipe Page [View](static/testing/edit_recipe.PNG)
+  
+  A number of 3 errors were found upon validation regarding the ingredients and recipe method appearing as duplicates.
+
+  The fix would be to modify the database and add fields for each ingredient and preparation step.
+
+  Although it does not break the functionality, it would be something I will work on to fix.
+
+- Manage Categories Page [View](static/testing/manage_categories.PNG)
+
+- Add Category Page [View](static/testing/add_category.PNG)
+
+- CSS validation [View](static/testing/css.PNG)
+
+### JavaScript
+
+The JavaScript part of the website was tested using Beautify Tools [here](https://beautifytools.com/javascript-validator.php) and no errors have been found:
+
+- JavaScript validation [View](static/testing/js.PNG)
+
+### Python 
+
+For validating python code I have used PEP8 Online [here](http://pep8online.com/) and no errors have been found:
+
+- Python Code validation [View](static/testing/python.PNG)
 
 There are a number of forms used on this application to accept user input including the login form, signup form, search and filter forms on the recipe list page and on the add and edit recipe pages. Various forms and levels of HTML validation has been used on form inputs to verify inputs to each form field. These forms were tested while being developed to ensure that the validation was having the desired effect and providing the desired outcome.
 
+## Further Testing
+
+
+### Design 
+
+#### Colour Scheme
+           
+     - The two main colours used are white and blue to impact better with the background image.
+       
+#### Typography
+
+     - Vollkorn with fallback on Sans Serif is the main font used throughout the website. I find it both attractive and appropiate.
+     - Graduate with fallback on Sans Serif is used for the results display, timer and progress.The numbers look like football scoreboard numbers and goes well with the theme.
+
+#### Imagery 
+
+    - As a background image I choose a cartoon football pitch to describe that the quiz is about football but in his essence is still a game. For the image I choose clean pictures with enough resolution to not appear pixelated on any screen size.
+     
+### Wireframes
+
+     -   Start Page Wireframe - [View](https://i.imgur.com/csdzecc.png)
+     
+     -   Main Page  Wireframe - [View](https://i.imgur.com/qmrQaxd.png)
+
+     -   Results Page  Wireframe - [View](https://i.imgur.com/13HlDpg.png)
+
+     -   Start Page Mobile Wireframe - [View](https://i.imgur.com/O8REOHc.png)
+
+     -   Main Page Mobile Wireframe - [View](https://i.imgur.com/IF8y6Hy.png)
+
+     -   Results Page Mobile Wireframe - [View](https://i.imgur.com/a2J6mXO.p
 
 
 
+# Deployment
 
+## GitHub Pages
 
+ The project was deployed to GitHub Pages using the following steps...
 
-## Deployment
+ 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+ 2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+ 3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+ 4. Under "Source", click the dropdown called "None" and select "Master Branch".
+ 5. The page will automatically refresh.
+ 6. Scroll back down through the page to locate the now published site [link](https://github.com) in the "GitHub Pages" section.
 
-GitHub was used for version control throught the development of the application and to host the code by pushing all code to the repo on GitHub.
+### Forking the GitHub Repository
+
+ By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+ 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+ 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+ 3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+ 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+ 2. Under the repository name, click "Clone or download".
+ 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+ 4. Open Git Bash
+ 5. Change the current working directory to the location where you want the cloned directory to be made.
+ 6. Type `git clone`, and then paste the URL you copied in Step 3.
+ 
+ ```
+ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+ ```
+
+ 7. Press Enter. Your local clone will be created.
+
+ ```
+ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+ > Cloning into `CI-Clone`...
+ > remote: Counting objects: 10, done.
+ > remote: Compressing objects: 100% (8/8), done.
+ > remove: Total 10 (delta 1), reused 10 (delta 1)
+ > Unpacking objects: 100% (10/10), done.
+ ``` 
+
+## Heroku
 
 This project was then deployed to Heroku to host the live application, following the steps below:
 
 1. Log in to [Heroku](https://www.heroku.com/) and create a new app called 'the-open-cookbook'
+
 2. Log in to Heroku in the CLI
+
 3. Add the remote Heroku repo
+
 4. Create the requirements.txt file by running `pip3 freeze --local > requirements.txt` in the CLI
+
 5. Create a Procfile by running `echo web: python run.py > Procfile` in the CLI
+
 6. Start a web process on Heroku by running `heroku ps:scale web=1` in the CLI
+
 7. Set environment variables in Heroku for IP, PORT and MONGO_URI
+
 8. Restart all dynos on Heroku
 
-The live project can be viewed [here](http://the-open-cookbook.herokuapp.com/).
+The live project can be viewed [here](https://cooking-frenzy.herokuapp.com/).
 
 
-## Credits
+# Credits
 
