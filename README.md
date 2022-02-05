@@ -1,102 +1,146 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Welcome to Cooking Frenzy
 
-Welcome AdrianMoldoveanu,
+A full stack CRUD application that allows users to register and log in to create, edit, update and delete recipes.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+This application uses Python on the back-end with the Flask web framework, and uses MongoDB for the database.
 
-## Gitpod Reminders
+For the front-end it uses Materialize with some custom CSS.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Built for Milestone Project no.4 in the Full Stack Software Development Course at Code Institute for the Data Centric Development module.
 
-`python3 -m http.server`
+The live project can be viewed [here](https://cooking-frenzy.herokuapp.com/).
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## UX
+ 
+This application was built to allow users create and share recipes, as well as updating and deleting them as necessary. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The application provides a registration page for new users to register on the site, and a log in page to sign in after they have registered. 
 
-A blue button should appear to click: _Make Public_,
+Any visitor can browse the recipes created on the site but only logged in users can add, edit and delete recipes.
 
-Another blue button should appear to click: _Open Browser_.
+The search feature offers searching by category, recipe name, ingredients or author.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+##### User Stories
 
-To log into the Heroku toolbelt CLI:
+As a user I can:
+- register as a user on the site
+- log in to the site once registered
+- add new recipes to the site (when logged in)
+- edit recipes I create on the site (when logged in)
+- delete any recipes I created on the site (when logged in)
+- view a list of recipes stored on the site
+- search the list of recipes by a recipe name
+- filter the list of recipes by category keywords
+- sort the list of recipes by ingredients keywords
+- sort the list of recipes by author
+- add an image for the recipe
+- click on a recipe to see information about the recipe
+- see the ingredients for a selected recipe
+- read the method for preparing the recipe
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+This site was built on the basis of ideas from initial wireframes created in Adobe XD and exported image files for these can be seen below. These image files as well as the XD project file can be found in the main project folder:
 
-------
+![wireframe prototype 1](design/androidmobile1.png)
+![wireframe prototype 2](design/androidmobile2.png)
+![wireframe prototype 3](design/androidmobile3.png)
 
-## Release History
+The initial designs were based on the idea that a very basic login feature would be used but as the project developed I decided to implement a slightly more sophisticated user registration and authorisation feature and the original designs were also improved upon as the front-end of the project was being built. The improvements were made for the benefit of User Experience and to make the application more visually appealing as it was being styled throughout development.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Features
+ 
+##### Existing Features
+- Feature 1 - The **User Registration and User Login** feature hashes user passwords so user's passwords are not stored in the application database as simple text strings as they are entered by the user when registering. This means that even by viewing the database documents you will not be able to see a user's password. The Registration form and Login forms use a lot of HTML validation including Regex pattern detection to ensure that usernames and password etc are all entered in the correct format. These forms also provide dynamic helper text to let a user know if there are any problems with anything they have entered in one of the fields, or if everything is ok. Usernames also have to be unique and the application will check through the database to ensure usernames aren't already taken before a new user can be registered.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- Feature 2 - **User Authorisation** built within the application ensures that visitors to the site cannot access URL routes for adding, updating or deleting recipes and will be redirected to the Login page if any of these URLs are entered in the browser address bar. 
+  Also, once a user is logged in they will only be able to Edit/Update or Delete recipes only created by them alone. They will not be able to do the same to recipes created by other users. 
+  The option to log out of the site is available to users who are logged into an active session.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- Feature 3 - The feature for **Adding Recipes** will be available for users who are logged in and is accessed by the 'New Recipe' button in the top right-hand corner of the UI. 
+  This will take the user to a full page form that will allow them to submit detailed information about a new recipe as well as adding an image (a remotely hosted image, added by URL) dynamically adding and removing ingredients and steps in the recipe method. 
+  Again, this form provides helper text assistance to users to let them know if there are problems with entries in form fields or whether everything is ok.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Feature 4 - When **Browsing Recipes** in the application a user can search recipe names by entering a search string in the provided text field and this will then search for recipes whose name includes the query string.
+  There is a drop-down menu of cuisine types so a user can filter the recipe list by recipes only matching the selected cuisins. 
+  In addition to that there are sorting buttons to sort all recipes in the application by ascending and descending alphabetical order, as well as by the most 'liked' recipes.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- Feature 5 - When the use is on their **Profile** they can see all the recipes they created.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+##### Future Features
+- Feature 1 - A User Dashboard where they can edit their own user details or change their password. 
+- Feature 2 - A password reset feature would be a useful feature to be built that will allow a user to reset their password when they unfortunately forget the password they entered when they registered to use the application. 
+- Feature 3 - Users to be able to like other users recipes.
+  Maybe eventually a rating system based on scale form 1 - 10.
+- Feature 4 - Add a cooking utensils section from which users can purchase desired utensils and the site owner can get a percentage of the sales.  
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Technologies Used
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Languages, frameworks, libraries, and any other tools used to construct this project. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- HTML 5
+    - This project uses **HTML** to structure the content of the website.
+- CSS 3
+    - The project uses **CSS** to add additional styling to the site and refine responsive beahviour using media queries.
+- [Materialize](https://materializecss.com/)
+    - This project uses **Materialize** to provide the front-end grid framework and support responsive behaviour.
+- JavaScript
+    - The project uses **JavaScript** to add and remove content dynamically and to initialise Materialize components.
+- [jQuery](https://jquery.com/)
+    - This project uses **jQuery** to assist in making asynchronous requests for and also to simplify DOM node selection and manipulation.
+- [Python](https://www.python.org/)
+    - This project uses **Python** as the server-side programming language to provide back-end logic and serve dynamic web pages to the browser.
+- [Flask](http://flask.pocoo.org/)
+    - This project uses **Flask** as the back-end framework to simplify configuration of the application and routing, to render HTML templates, work with client requests  and to assist with user session management.
+- [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
+    - This project uses **Flask-PyMongo** to connect the application to MongoDB and for retrieving, inserting, updating and deleting data to and from the database.
+- [MongoDB](https://www.mongodb.com/)
+    - This project uses **MongoDB**, and more specifically MongoDB Atlas, as it's database system used to store data about users and recipes.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+This project was developed incrementally with continuous use of `console.log` statement in JavaScript and the `print()` function in Python to repeatedly check the changes made in the application and to ensure all changes to source code were providing the desired outcome in the browser. The site was build using Google Chrome browser (version 74) and then later tested in other browsers; FireFox (version 66) and Edge (version 42).
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+This project was tested for responsiveness using the Chrome Developer Tools mobile device simulator. It was also viewed on physical Samsung Galaxy A5 (2017) mobile device to ensure good responsive behaviour. The site was also tested in Mozilla Firefox (version 66) and Microsoft Edge (version 42) browsers to ensure appearance and functionality of the site was as expected across all 3 of these browsers.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+All of the following routes were checked using the W3C Validation Tool [here](http://validator.w3.org), and both HTML and CSS files passed without error:
+- /
+- /login
+- /add_recipe
+- /edit_recipe/<recipe_id>/
+- /recipe/<recipe_id>/
+- /signup
 
-------
+There are a number of forms used on this application to accept user input including the login form, signup form, search and filter forms on the recipe list page and on the add and edit recipe pages. Various forms and levels of HTML validation has been used on form inputs to verify inputs to each form field. These forms were tested while being developed to ensure that the validation was having the desired effect and providing the desired outcome.
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Deployment
 
-**So….?**
+GitHub was used for version control throught the development of the application and to host the code by pushing all code to the repo on GitHub.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+This project was then deployed to Heroku to host the live application, following the steps below:
 
-**Can I opt out?**
+1. Log in to [Heroku](https://www.heroku.com/) and create a new app called 'the-open-cookbook'
+2. Log in to Heroku in the CLI
+3. Add the remote Heroku repo
+4. Create the requirements.txt file by running `pip3 freeze --local > requirements.txt` in the CLI
+5. Create a Procfile by running `echo web: python run.py > Procfile` in the CLI
+6. Start a web process on Heroku by running `heroku ps:scale web=1` in the CLI
+7. Set environment variables in Heroku for IP, PORT and MONGO_URI
+8. Restart all dynos on Heroku
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+The live project can be viewed [here](http://the-open-cookbook.herokuapp.com/).
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+## Credits
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+##### Acknowledgements
 
----
-
-Happy coding!
+- The Authorisation function used on routes requiring user log in was based on code from a Flask Snippet written by Alex Abbott which can be found [here](http://flask.pocoo.org/snippets/98/)
+- The pagination feature used on the recipe list in this application was based on a coding tutorial by David Acosta which can be found [here](https://www.youtube.com/watch?v=Xznn-ggD0GU) on YouTube
+- All initial recipes (of which there are ten), including their images, were recipes taken from the BBC GoodFood website which can be found [here](https://www.bbcgoodfood.com/recipes)
