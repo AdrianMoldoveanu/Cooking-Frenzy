@@ -174,13 +174,13 @@ As a user I can:
 
 Languages, frameworks, libraries, and any other tools used to construct this project. 
 
-- HTML 5
+- [HTML 5](https://en.wikipedia.org/wiki/HTML5)
     - This project uses **HTML** to structure the content of the website.
-- CSS 3
+- [CSS 3](https://en.wikipedia.org/wiki/CSS)
     - The project uses **CSS** to add additional styling to the site and refine responsive beahviour using media queries.
 - [Materialize](https://materializecss.com/)
     - This project uses **Materialize** to provide the front-end grid framework and support responsive behaviour.
-- JavaScript
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
     - The project uses **JavaScript** to add and remove content dynamically and to initialise Materialize components.
 - [jQuery](https://jquery.com/)
     - This project uses **jQuery** to assist in making asynchronous requests for and also to simplify DOM node selection and manipulation.
@@ -245,6 +245,93 @@ For validating python code I have used PEP8 Online [here](http://pep8online.com/
 
 ## Further Testing
 
+### Manual Testing buttons and links
+
+- All buttons and links are vissible to the user and they appear to be working consistently on every page of the site [here](static/testing/manual_home_page_navbar.png) [here](static/testing/manual_home_page_footer.png)
+
+### Testing all pages of the site
+
+#### Home page
+
+- The home page welcomes the user with a message to create an account if they wish to add their own recipes and it displays all available recipes [here](static/testing/manual_home_page_navbar.png)
+
+- On log in the message dissapears as it served its purpose.
+
+#### Log In / Register
+
+- The Log In form displays correctly [here](static/testing/manual_login.png)
+
+- The Register form displays correctly [here](static/testing/manual_register.png)
+
+#### Recipe card
+
+- Recipes are display in a card which contains the recipe image and a collapsible section with the recipe details [here](static/testing/manual_recipe_card.png) 
+
+#### New recipe
+
+- After registering the user can add their own reipes.
+
+- To do this they can navigate to 'New Recipe' page in the navbar.
+
+- The add recipe form will be displayed with the required fields [here](static/testing/manual_new_recipe.png)
+
+- To add a new ingredient or step the user needs to click on 'add ingredient' or 'add step' buttons and a new field will appear for each click.
+
+- To remove an ingredient or a step the user can click on 'Remove ingredient' or 'Remove step' buttons which will populate under each corresponding field.
+
+- The maximum number of ingredients is 20.
+
+- The maximum number of steps is 20.
+
+- On reaching that number the user cannot add any more fields.
+
+- A note was added under the  Recipe Image field to guide users on the image upload process.
+
+- All fields are mandatory and require a minimum number of characters.
+
+- After completing all the fields the user can click on add recipe button which will add the recipe in all recipes and the user's profile page
+
+#### Edit Recipe
+
+- The user can edit or delete a recipe by going on their recipe and click the edit or delete buttons at the bottom of the card [here](static/testing/manual_recipe_card.png) 
+
+- On Edit recipe the edit recipe form will be displayed and the user can change all the fields previously completed.
+
+- The form can be submitted via the submit button at the bottom or canceled by the cancel button at the bottom.
+
+#### Profile 
+
+- Every user has a profile page located in the navbar that will display the users name and the recipes they created [here](static/testing/manual_profile.png) 
+
+#### Search
+
+- The search bar is available on the recipes page for users to search by recipe name, ingredients, category and author.
+
+- In this example we look for breakfast category [here](static/testing/manual_search1.png)
+
+- On clicking search only the recipe in breakfast category is displayed [here](static/testing/manualk_search_results.png)
+
+- If the search cannot find any results a 'No results found' message will be displayed.
+
+#### Manage Categories Admin only
+
+- The admin has a special page called manage categories [here](static/testing/manual_manage_categories.png) 
+
+- A list of categories will be displayed which can be edited or deleted.
+
+- To add a new category the add category button will be clicked which will lead to a form [here](static/testing/manual_add category.png)
+
+- After submit the new category will be displayed in the list and available to select for the users when adding a new recipe.
+
+#### Mongo Database
+
+- The collection has three parts: categories, recipes and users [here](static/testing/db_collection.PNG)
+
+- The categories take a unique id with a category_name input [here](static/testing/db_categories.PNG)
+
+- The recipes have their own document which takes six inputs for: recipe_image, recipe_name, category_name, recipe_ingredients, recipe_method and created_by [here](static/testing/db_recipes.PNG)
+
+- The users have each a unique id and take two fields : username and password [here](static/testing/db_users.PNG) (Details have been scribbled for security reasons)
 
 # Design 
 
@@ -347,4 +434,25 @@ The live project can be viewed [here](https://cooking-frenzy.herokuapp.com/).
 
 
 # Credits
+
+- The skeleton for this project is Tim Nelson's Task Manager project from the mini project section of the course (Thank you, Tim!)
+
+- For the fonts I used Google Fonts [View](https://fonts.google.com/)
+
+- For the navbar,footer and colours I used code from Materialize [View](https://materializecss.com/)
+
+- For the background image I used Google Images and found the image which was downloaded from [View](https://wallpapersafari.com/foodservice-backgrounds/)
+
+- To add ingredients and steps dynamically I used Sanwebe tutorial [View](https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery)
+
+- For more clarification on the process I used Kes2401 milestone project [View](https://github.com/Code-Institute-Submissions/online-cookbook-4)
+
+
+# Acknowledgements
+
+- A special thank you for my girlfriend for support in helping with testing and UX input and just general and moral support :)
+
+- Tim Nelson for the amazing mini project which actually taught me how to use Python and Jinja in particular.
+
+
 
